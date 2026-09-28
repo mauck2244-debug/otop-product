@@ -121,7 +121,7 @@ app.put("/api/products/:id", (req, res) => {
       error: "ข้อมูลไม่ครบ"
     });
   }
-  
+
   const updated =updateProduct(id, {
     name,
     producer,
@@ -135,6 +135,11 @@ app.put("/api/products/:id", (req, res) => {
   res.json(updated);
 });
 
-app.listen(3000, () => {
-  console.log("🚀 http://localhost:3000");
+//app.listen(3000, () => {
+//console.log("🚀 http://localhost:3000");
+//});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
